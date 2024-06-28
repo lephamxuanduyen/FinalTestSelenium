@@ -1,10 +1,12 @@
 package pages;
 
 import base.PageBase;
+import enums.TabName;
 import models.Ticket;
 import org.openqa.selenium.By;
 import org.testng.asserts.SoftAssert;
 import utils.Action;
+import java.util.List;
 
 public class BookTicketsPage extends PageBase {
     String txb = "//select[@name='%s']";
@@ -12,8 +14,7 @@ public class BookTicketsPage extends PageBase {
     String infoBookTicketSucc = "//table//td[count(//th[text()='%s']/preceding-sibling::th) + 1]";
     public By message = By.xpath("//div[@id='content']/h1");
     public By mesBookTicketSucc = By.xpath("//div[@id='content']/h1");
-    String total = "//table[@class='MyTable']//tr[td[text()='%s' and following-sibling::td[text()='%s' and following-sibling::td[text()='%s' and following-sibling::td[text()='%s' and following-sibling::td[text()='%s']]]]]]//td[count(//tr/th[text()='Total Price']/preceding-sibling::th)+1]";
-
+    By total = By.xpath("//td[count(//tr//th[text()='Total Price']/preceding-sibling::th)+1]");
 
     public void bookTicket(Ticket ticket) {
         selectDepartStation(ticket.getDepartStation().getStationValue());
@@ -22,6 +23,13 @@ public class BookTicketsPage extends PageBase {
         selectTicketAmount(ticket.getTicketAmount());
         selectArriveStation(ticket.getArriveStation().getStationValue());
         submitForm();
+    }
+
+    public void bookTicketFromJson(List<Ticket> ticketList){
+        for (Ticket ticket: ticketList){
+            selectTab(TabName.BOOKTICKET);
+            bookTicket(ticket);
+        }
     }
 
     public void selectDepartStation(String station){
@@ -75,5 +83,7 @@ public class BookTicketsPage extends PageBase {
         softAssertions.assertEquals(actualAmount, ticket.getTicketAmount());
     }
 
-
+    public String getTotalPrice(){
+        return Action.getText(total);
+    }
 }

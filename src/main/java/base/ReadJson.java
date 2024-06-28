@@ -29,14 +29,14 @@ public class ReadJson {
         }
     }
 
-    public static List<Ticket> getTickets() {
-        List<Map<String, String>> infoTickets = (List<Map<String, String>>) data.get("bookTicket");
+    public static List<Ticket> getTickets(String key) {
+        List<Map<String, String>> infoTickets = (List<Map<String, String>>) data.get(key);
         List<Ticket> tickets = new ArrayList<>();
         for (Map<String, String> ticket : infoTickets) {
             String departDate = ticket.get("DepartDate");
             Station departStation = Station.fromStringtoStation(ticket.get("DepartStaion"));
             Station arriveStation = Station.fromStringtoStation(ticket.get("ArriveStation"));
-            SeatType seatType = SeatType.fromStringtoStation(ticket.get("SeatType"));
+            SeatType seatType = SeatType.fromStringtoSeatType(ticket.get("SeatType"));
             String ticketAmount = ticket.get("TicketAmount");
             Ticket tempUser = new Ticket(departDate, departStation, arriveStation, seatType, ticketAmount);
             tickets.add(tempUser);

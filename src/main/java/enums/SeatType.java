@@ -18,7 +18,7 @@ public enum SeatType {
         return value;
     }
 
-    public static SeatType fromStringtoStation(String value) {
+    public static SeatType fromStringtoSeatType(String value) {
         for (SeatType seatType : SeatType.values()) {
             if (seatType.getSeatTypeValue().equalsIgnoreCase(value)) {
                 return seatType;

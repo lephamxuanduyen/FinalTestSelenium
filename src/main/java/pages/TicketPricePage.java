@@ -10,6 +10,7 @@ public class TicketPricePage extends PageBase {
     public By tableHeader = By.xpath("//div[@id='content']//table//tr[@class='TableSmallHeader']/th");
     String infoPriceBySeatType = "//div[@id='content']//table//tr/th[contains(text(), 'Price (VND)')]/following-sibling::td[count(//td[text()='%s']/preceding-sibling::td)+1]";
     String bookTiketBtn = "//table[@class='NoBorder']//tr[td[text()='%s']]//a[text()='Book ticket']";
+    String ticketStation = "//tr[td/li[text()='%s']]//a[contains(@href, 'TicketPricePage')]";
 
     public String getPriceBySeatType(SeatType info) {
         return Action.getText(By.xpath(String.format(infoPriceBySeatType, info.toString())));
@@ -17,5 +18,9 @@ public class TicketPricePage extends PageBase {
 
     public void bookTicket(SeatType info){
         Action.click(By.xpath(String.format(bookTiketBtn, info.getSeatTypeValue())));
+    }
+
+    public void checkTicket(String ticketStationValue){
+        Action.click(By.xpath(String.format(ticketStation, ticketStationValue)));
     }
 }

@@ -54,4 +54,8 @@ public class Action {
             }
         }
     }
+
+    public static List<WebElement> findManyEle(By xpath){
+        return DriverManagement.driver.get().findElements(xpath);
+    }
 }
