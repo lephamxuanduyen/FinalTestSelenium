@@ -1,0 +1,53 @@
+{
+  "bookTicket": [
+    {
+      "DepartDate": "7/1/2024",
+      "DepartStaion": "Đà Nẵng",
+      "ArriveStation": "Nha Trang",
+      "SeatType": "Soft seat",
+      "TicketAmount": "1"
+    },
+    {
+      "DepartDate": "7/2/2024",
+      "DepartStaion": "Đà Nẵng",
+      "ArriveStation": "Nha Trang",
+      "SeatType": "Soft seat",
+      "TicketAmount": "1"
+    },
+    {
+      "DepartDate": "7/3/2024",
+      "DepartStaion": "Đà Nẵng",
+      "ArriveStation": "Nha Trang",
+      "SeatType": "Soft seat",
+      "TicketAmount": "1"
+    },
+    {
+      "DepartDate": "7/4/2024",
+      "DepartStaion": "Đà Nẵng",
+      "ArriveStation": "Nha Trang",
+      "SeatType": "Soft seat",
+      "TicketAmount": "1"
+    },
+    {
+      "DepartDate": "7/5/2024",
+      "DepartStaion": "Đà Nẵng",
+      "ArriveStation": "Nha Trang",
+      "SeatType": "Soft seat",
+      "TicketAmount": "1"
+    },
+    {
+      "DepartDate": "7/6/2024",
+      "DepartStaion": "Đà Nẵng",
+      "ArriveStation": "Nha Trang",
+      "SeatType": "Soft seat",
+      "TicketAmount": "1"
+    },
+    {
+      "DepartDate": "7/7/2024",
+      "DepartStaion": "Đà Nẵng",
+      "ArriveStation": "Nha Trang",
+      "SeatType": "Soft seat",
+      "TicketAmount": "1"
+    }
+  ]
+}
